@@ -32,8 +32,6 @@ Example:
       -F DELIMITER             Output field delimiter. Default: one space character
       FILEPATH                 File or process substitution with content to
                                randomize. Can give 1 or more inputs.
-      FILEPATH                 File or process substitution with content to
-                               randomize. Can give 1 or more inputs.
     
     https://github.com/danchoi/randlists
 
