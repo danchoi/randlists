@@ -14,7 +14,7 @@ options = (,)
     <$> option auto (
            short  'n' 
         <> metavar "ROWS"
-        <> help "Output n rows. Default is to output the number of rows in the longest file."
+        <> help "Output n rows. Default is to output the number of rows in the shortest file."
         <> value 0)
     <*> many1 (
           strArgument ( metavar "FILEPATH" <> help "File with content to randomize")
@@ -43,7 +43,7 @@ main = do
   (n', files) <- execParser opts
   xxs :: [[Text]] <- mapM (\file -> T.lines `fmap` T.readFile file) files
   let n = if n' < 1
-          then maximum $ map length xxs
+          then minimum $ map length xxs
           else n'
   g <- getStdGen 
   let r :: [[Text]]
