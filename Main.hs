@@ -9,13 +9,19 @@ import Data.Text (Text)
 import qualified Data.Text as T 
 import qualified Data.Text.IO as T 
 
-options :: Parser (Int, [FilePath])
-options = (,)
+options :: Parser (Int, String, [FilePath])
+options = (,,)
     <$> option auto (
            short  'n' 
         <> metavar "ROWS"
         <> help "Output n rows. Default is to output the number of rows in the shortest file."
         <> value 0)
+    <*> strOption (
+           short 'F'
+        <> metavar "DELIMITER"
+        <> help "Output field delimiter. Default: one space character"
+        <> value " "
+        )
     <*> many1 (
           strArgument ( metavar "FILEPATH" <> help "File with content to randomize")
         )
@@ -37,10 +43,9 @@ getRandomElem xs = do
 
 getRandomElems :: [[Text]] -> State StdGen [Text]
 getRandomElems xxs = mapM getRandomElem xxs
-
   
 main = do
-  (n', files) <- execParser opts
+  (n', d, files) <- execParser opts
   xxs :: [[Text]] <- mapM (\file -> T.lines `fmap` T.readFile file) files
   let n = if n' < 1
           then minimum $ map length xxs
@@ -48,5 +53,5 @@ main = do
   g <- getStdGen 
   let r :: [[Text]]
       r = evalState (replicateM n $ getRandomElems xxs) g
-  mapM (T.putStrLn . T.unwords) r
+  mapM (T.putStrLn . T.intercalate (T.pack d)) r
 

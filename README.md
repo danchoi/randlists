@@ -20,19 +20,19 @@ Example:
 ## Usage
 
     randlists
-
-    Usage: randlists [-n ROWS] FILEPATH [FILEPATH]
+    
+    Usage: randlists [-n ROWS] [-F DELIMITER] FILEPATH [FILEPATH]
       Generates random lists
-
+    
     Available options:
       -h,--help                Show this help text
       -n ROWS                  Output n rows. Default is to output the number of
                                rows in the shortest file.
+      -F DELIMITER             Output field delimiter. Default: one space character
       FILEPATH                 File with content to randomize
       FILEPATH                 File with content to randomize
-
+    
     https://github.com/danchoi/randlists
-
 
 If no limit is given with `-n`, `randlists` will output a number of lines equal to that of
 the shortest file (or process substitution).
