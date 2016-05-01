@@ -23,7 +23,7 @@ options = (,,)
         <> value " "
         )
     <*> many1 (
-          strArgument ( metavar "FILEPATH" <> help "File or process substitution with content to randomize. Can give 1 or more inputs."))
+          strArgument ( metavar "FILE" <> help "File or process substitution with content to randomize. Can give 1 or more inputs."))
 
 
 many1 :: Parser a -> Parser [a]

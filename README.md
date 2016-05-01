@@ -22,7 +22,7 @@ Example:
 
     randlists
     
-    Usage: randlists [-n ROWS] [-F DELIMITER] FILEPATH [FILEPATH]
+    Usage: randlists [-n ROWS] [-F DELIMITER] FILE [FILE]
       Generates random lists
     
     Available options:
