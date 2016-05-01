@@ -4,18 +4,19 @@ Outputs random combinations of multiple lists.
 
 Example: 
 
-    $ randlists <(seq 0 10) /usr/share/dict/words
-    7 verticillus
-    1 Thule
-    5 proenzym
-    7 topass
-    2 unshieldable
-    4 spheterize
-    4 unengendered
-    7 capitaled
-    6 alinasal
-    5 profaculty
-    8 inenarrable
+    $ randlists <(seq 0 10) /usr/share/dict/words /usr/share/dict/words
+    4 orthospermous untransmutable
+    6 subintroductory monogynist
+    5 protohemipteran unzealousness
+    2 extemporizer uninterdicted
+    2 croupal plantlet
+    3 wehrlite scruplesomeness
+    8 Ascalabota briolette
+    7 Jaalin winer
+    4 uncaressed supertranscendently
+    0 antimonarchical sulphoricinic
+    3 renocutaneous skimpily
+
 
 ## Usage
 
