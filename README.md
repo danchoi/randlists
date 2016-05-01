@@ -30,8 +30,10 @@ Example:
       -n ROWS                  Output n rows. Default is to output the number of
                                rows in the shortest file.
       -F DELIMITER             Output field delimiter. Default: one space character
-      FILEPATH                 File with content to randomize
-      FILEPATH                 File with content to randomize
+      FILEPATH                 File or process substitution with content to
+                               randomize. Can give 1 or more inputs.
+      FILEPATH                 File or process substitution with content to
+                               randomize. Can give 1 or more inputs.
     
     https://github.com/danchoi/randlists
 
